@@ -16,4 +16,28 @@ class Flotilla
     @personnel << person
   end
 
+  def recommend_personnel(spacecraft)
+    recommended = []
+    experienced = []
+
+    craft_keys = spacecraft.requirements.flat_map do |requirement|
+      requirement.keys
+    end
+    craft_values = spacecraft.requirements.flat_map do |requirement|
+      requirement.values
+    end
+    @personnel.find_all do |person|
+      if person.experience > craft_values.max
+        experienced << person
+      end
+    end
+    experienced.find_all do |pers|
+     craft_keys.each do |key|
+        if pers.specialties.any?(key) == true
+          recommended << pers
+        end
+      end
+    end
+    recommended.uniq
+  end
 end
