@@ -53,7 +53,6 @@ class Flotilla
         ships_persons[ship] << recommend_personnel(ship)
       end
     end
-    require "pry"; binding.pry
     ships_persons
   end
 end
