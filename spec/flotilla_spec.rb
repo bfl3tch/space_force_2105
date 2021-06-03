@@ -129,7 +129,9 @@ RSpec.describe do
       seventh_flotilla.add_personnel(sampson)
 
       expect(seventh_flotilla.personnel_by_ship).to be_a(Hash)
-      
+      # expect(seventh_flotilla.personnel_by_ship).to eq({
+      #   odyssey:  [polly],
+      #   daedalus: [kathy, sampson]})
     end
   end
 end
