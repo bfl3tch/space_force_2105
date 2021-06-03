@@ -12,7 +12,7 @@ RSpec.describe do
     it 'has readable attributes' do
       seventh_flotilla = Flotilla.new({designation: 'Seventh Flotilla'})
 
-      expect(seventh_flotilla.designation).to eq('Seventh Flotilla')
+      expect(seventh_flotilla.name).to eq('Seventh Flotilla')
     end
   end
 
